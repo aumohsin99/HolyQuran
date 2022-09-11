@@ -1,0 +1,41 @@
+[33mcommit f06a6113aa0a1cf9838f82c70ce7aabb46aecef6[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Moshin <bsef19m031@pucit.edu.pk>
+Date:   Sun Sep 11 15:38:19 2022 +0500
+
+    addition of Surah and Ayah Activities
+
+[33mcommit 0c989b25f228374313ed2748df02acc57988f3f1[m
+Author: Moshin <bsef19m031@pucit.edu.pk>
+Date:   Sat Sep 10 19:36:55 2022 +0500
+
+    Activities and custom array adapter added
+
+[33mcommit 1ef8917b344d6260f6f8cf8c02584e01bbb669cd[m
+Author: Moshin <bsef19m031@pucit.edu.pk>
+Date:   Sat Sep 10 19:13:29 2022 +0500
+
+    Functions added for DB
+
+[33mcommit 2ff08884a175d01d9199c597675874fdea20e38a[m
+Author: Moshin <bsef19m031@pucit.edu.pk>
+Date:   Sat Sep 10 19:07:23 2022 +0500
+
+    Database Testing
+
+[33mcommit 3d6640ad01068819f812570b46f358a1b04fc331[m
+Author: Moshin <bsef19m031@pucit.edu.pk>
+Date:   Sat Sep 10 18:56:53 2022 +0500
+
+    database setup
+
+[33mcommit d63287b296bc570e91bacf72db603f5a65add3af[m
+Author: Moshin <bsef19m031@pucit.edu.pk>
+Date:   Sat Sep 10 18:48:06 2022 +0500
+
+    Quran Database added
+
+[33mcommit 70cfe196191893a4d6700b16c7b0924c2b394999[m
+Author: Moshin <bsef19m031@pucit.edu.pk>
+Date:   Wed Aug 24 18:22:22 2022 +0500
+
+    Initial commit

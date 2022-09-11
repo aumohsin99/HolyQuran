@@ -6,15 +6,16 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CustomArrayAdapterAyah extends ArrayAdapter {
     Activity context;
-    List<String> ayahArabicArr;
-    List<String> ayahTransArr;
+    ArrayList<String> ayahArabicArr;
+    ArrayList<String> ayahTransArr;
 
 
-    public CustomArrayAdapterAyah(Activity context, List<String> ayahArabicArr, List<String> ayahTransArr) {
+    public CustomArrayAdapterAyah(Activity context, ArrayList<String> ayahArabicArr, ArrayList<String> ayahTransArr) {
         super(context, 0, ayahArabicArr);
         this.context=context;
         this.ayahArabicArr=ayahArabicArr;
@@ -26,12 +27,9 @@ public class CustomArrayAdapterAyah extends ArrayAdapter {
         View singleEntityView=inflater.inflate(
                 R.layout.activity_custom_ayah_view, null,true);
         TextView ayahArabic=singleEntityView.findViewById(R.id.ayahArabic);
-
         TextView ayahTrans=singleEntityView.findViewById(R.id.ayahTrans);
-
         ayahArabic.setText(ayahArabicArr.get(position));
         ayahTrans.setText(ayahTransArr.get(position));
         return singleEntityView;
     }
-
 }

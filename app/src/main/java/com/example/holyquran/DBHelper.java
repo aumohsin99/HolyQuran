@@ -1,5 +1,4 @@
 package com.example.holyquran;
-
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -13,7 +12,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
-
 public class DBHelper extends SQLiteOpenHelper {
     private SQLiteDatabase db;
     private final Context context;
@@ -81,54 +79,69 @@ public class DBHelper extends SQLiteOpenHelper {
             Log.v("error", e.toString());
         }
     }
-
     public void openDB() throws SQLException {
-
-
         String myPath = params.DB_PATH + params.DB_NAME;
         db = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READWRITE);
         Log.i("open DB......",db.toString());
     }
-
     @Override
     public synchronized void close() {
-
         if(db != null)
             db.close();
-
         super.close();
     }
-
     @Override
     public void onCreate(SQLiteDatabase db) {
-
     }
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
 
-    public List<String> displaySurahName(String name){
+    public ArrayList<String> displaySurahName(String name){
+        SQLiteDatabase db=null;
+        String path = params.DB_PATH + params.DB_NAME;
+        Log.i("myPath",path);
+        db = SQLiteDatabase.openDatabase(path, null, SQLiteDatabase.OPEN_READONLY);
+        ArrayList<String> surahNameList = new ArrayList<>();
+        if (db!=null) {
+            String query = "SELECT "+ name+ " FROM " + params.SURAH_TABLE;
+            Cursor cursor = db.rawQuery(query, null);
+
+            if (cursor.moveToFirst()) {
+                do {
+                    String surahName;
+                    if(cursor.getString(0) != null) {
+                        surahName = cursor.getString(0);
+                        Log.i("SurahName", surahName);
+                        surahNameList.add(surahName);
+                    }
+                } while (cursor.moveToNext());
+            }
+        }
+        return surahNameList;
+    }
+
+
+    public ArrayList<String> displayAyah(final int nameNo,int surahNumber)
+    {
         SQLiteDatabase db=this.getReadableDatabase();
-        String query="SELECT "+ name +" FROM "+params.SURAH_TABLE;
-
-//    public List<String> displaySurahName(){
-//        SQLiteDatabase db=this.getReadableDatabase();
-//        String query="SELECT SurahNameU FROM "+params.SURAH_TABLE;
-
+        String query="SELECT * FROM "+params.AYAH_TABLE+" where SuraID="+surahNumber;
         Cursor cursor=db.rawQuery(query,null);
-        List<String> surahNameList=new ArrayList<>();
+        ArrayList<String> ayahList=new ArrayList<>();
         if(cursor.moveToFirst())
         {
             do {
-                String surahName="";
+                String ayah="";
+                if(cursor.getString(nameNo) != null) {
 
-                surahName=cursor.getString(0);
-                surahNameList.add(surahName);
+                    ayah = cursor.getString(nameNo);
+                    Log.i("Ayah:",ayah);
+                    ayahList.add(ayah);
+                }
             } while (cursor.moveToNext());
         }
-        return surahNameList;
+        return ayahList;
     }
 
 }
