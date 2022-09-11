@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/HolyQuran/app/src/main/res/layout/activity_ayah_list.xml" value="0.2" />
         <entry key="..\:/HolyQuran/app/src/main/res/layout/activity_custom_ayah_view.xml" value="0.1" />
         <entry key="..\:/HolyQuran/app/src/main/res/layout/activity_custom_surah_view.xml" value="0.1" />
         <entry key="..\:/HolyQuran/app/src/main/res/layout/activity_main.xml" value="0.2" />
