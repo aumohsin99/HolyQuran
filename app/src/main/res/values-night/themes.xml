@@ -2,7 +2,7 @@
 
     <!-- Base application theme. -->
 
-    <style name="Theme.Quran360" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Quran" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
         <!-- Primary brand color. -->
 
