@@ -1,0 +1,1 @@
+Holy Quran Application Version 1 developed using SQLite Database and without recycler view.
